@@ -420,7 +420,7 @@ const HomePage = () => {
               <div className="flex gap-2">
                 <Button
                   asChild
-                  size="lg"
+                  size="default"
                   className="rounded-full bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-300"
                 >
                   <Link
@@ -436,7 +436,7 @@ const HomePage = () => {
                 <Button
                   asChild
                   variant="outline"
-                  size="lg"
+                  size="default"
                   className="rounded-full border-primary hover:bg-primary/10 transition-all duration-300"
                 >
                   <Link
