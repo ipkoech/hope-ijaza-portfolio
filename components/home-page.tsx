@@ -21,7 +21,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  ExternalLink,
   Moon,
   Sun,
   Menu,
@@ -191,7 +190,6 @@ const HomePage = () => {
       image: "/placeholder.svg?height=60&width=60",
     },
   ]
-  
 
   // Handle scroll events to update active section and header styling
   useEffect(() => {
@@ -312,6 +310,7 @@ const HomePage = () => {
                   { name: "Home", id: "home" },
                   { name: "About", id: "about" },
                   { name: "Services", id: "services" },
+                  { name: "Pricing", id: "pricing" },
                   { name: "Portfolio", id: "portfolio" },
                   { name: "Blog", id: "blog" },
                   { name: "Contact", id: "contact" },
@@ -451,7 +450,7 @@ const HomePage = () => {
                 </Button>
               </div>
               <div className="flex gap-6 mt-8">
-              <Link
+                <Link
                   href="https://www.instagram.com/miss_ijaza?igsh=bG1kM280djNrZ2Q3"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -772,6 +771,190 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="py-20 section-alt relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-600/30 to-green-400/20 z-0"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/20 blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-accent/20 blur-3xl"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 bg-primary/10 rounded-full text-primary font-medium mb-4">
+              Pricing Plans
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">SMM Rate Card</h2>
+            <div className="w-20 h-1 bg-primary mx-auto"></div>
+            <p className="max-w-2xl mx-auto mt-4 text-muted-foreground">
+              Choose the perfect social media management package for your business needs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Bronze Package */}
+            <div className="bg-background/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-primary/10 transition-transform duration-300 hover:transform hover:scale-105">
+              <div className="bg-gradient-to-r from-teal-600 to-green-400 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-1">Bronze</h3>
+                <p className="opacity-90">(Basic)</p>
+              </div>
+              <div className="p-6">
+                <p className="text-sm mb-4">Ideal for starter businesses</p>
+                <div className="text-3xl font-bold mb-6">KShs 20,000</div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>2 social media platforms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Initial strategy session</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Content calendar for 1 month</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Design work - logo, promo posters and captions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>1 post, 3 stories per day</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Ads</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>End of month report</span>
+                  </li>
+                </ul>
+                <Button
+                  asChild
+                  className="w-full rounded-full bg-gradient-to-r from-teal-600 to-green-400 hover:from-green-400 hover:to-teal-600"
+                >
+                  <Link href="#contact">Get Started</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Silver Package */}
+            <div className="bg-background/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-primary/10 transform scale-105 md:scale-110 z-10 relative">
+              <div className="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                POPULAR
+              </div>
+              <div className="bg-gradient-to-r from-teal-600 to-green-400 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-1">Silver</h3>
+                <p className="opacity-90">(Standard package)</p>
+              </div>
+              <div className="p-6">
+                <p className="text-sm mb-4">Perfect for growing businesses</p>
+                <div className="text-3xl font-bold mb-6">KSh 30,000</div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>3 social media platforms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Initial strategy session</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Content calendar for 1 month</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>2 posts, 5 stories per week</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Ads</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Community management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>End of month report</span>
+                  </li>
+                </ul>
+                <Button
+                  asChild
+                  className="w-full rounded-full bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary"
+                >
+                  <Link href="#contact">Get Started</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Gold Package */}
+            <div className="bg-background/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-primary/10 transition-transform duration-300 hover:transform hover:scale-105">
+              <div className="bg-gradient-to-r from-teal-600 to-green-400 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-1">Gold</h3>
+                <p className="opacity-90">(Premium Package)</p>
+              </div>
+              <div className="p-6">
+                <p className="text-sm mb-4">For established businesses</p>
+                <div className="text-3xl font-bold mb-6">KSh 45,000</div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>5 social media platforms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Initial strategy session</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Weekly pre-scheduled content calendar</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>3 posts, 5 stories per day</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Design work</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Social media ads</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>2 content creation sessions per month</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Post/community engagement</span>
+                  </li>
+                </ul>
+                <Button
+                  asChild
+                  className="w-full rounded-full bg-gradient-to-r from-teal-600 to-green-400 hover:from-green-400 hover:to-teal-600"
+                >
+                  <Link href="#contact">Get Started</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-xl font-bold mb-4">YOU'VE GOT A BUSINESS, LET'S CREATE A BRAND.</p>
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-300"
+            >
+              <Link href="#contact">Book a Consultation</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 section-alt relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-primary/10 z-0"></div>
@@ -954,7 +1137,6 @@ const HomePage = () => {
         </div>
       </section>
 
-
       {/* Contact Section */}
       <section id="contact" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/5 z-0"></div>
@@ -1017,8 +1199,7 @@ const HomePage = () => {
 
               <h3 className="text-2xl font-bold mt-12 mb-6">Follow Me</h3>
               <div className="flex gap-6">
-              
-              <Link
+                <Link
                   href="https://www.instagram.com/miss_ijaza?igsh=bG1kM280djNrZ2Q3"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -1113,7 +1294,6 @@ const HomePage = () => {
               </form>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -1202,6 +1382,7 @@ const HomePage = () => {
               { name: "Home", id: "home" },
               { name: "About", id: "about" },
               { name: "Services", id: "services" },
+              { name: "Pricing", id: "pricing" },
               { name: "Portfolio", id: "portfolio" },
               { name: "Blog", id: "blog" },
               { name: "Contact", id: "contact" },
@@ -1236,4 +1417,3 @@ const HomePage = () => {
 }
 
 export default HomePage
-
