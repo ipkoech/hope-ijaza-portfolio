@@ -102,9 +102,9 @@ const HomePage = () => {
 
   // Case studies
   const caseStudies = [
-    { title: "Getrude the osteopath - Social Media Revamp", description: "Developed and executed a comprehensive social media strategy transforming online presence via visual storytelling and targeted engagement.", metrics: ["+20% engagement", "+15% conversion", "-10% CPC", "+35% Instagram growth (6mo)"], image: "/placeholder.svg?height=400&width=600" },
-    { title: "Grocer Mbio - Digital Marketing Campaign", description: "Data-driven content + SEO plan enhancing brand visibility and customer engagement.", metrics: ["+15% brand awareness", "+20% organic traffic", "+30% email CTR", "+12% retention"], image: "/placeholder.svg?height=400&width=600" },
-    { title: "Fashion Brand Launch Campaign", description: "Launch strategy establishing digital presence from zero to traction.", metrics: ["10k+ followers first month", "25% engagement (avg 3%)", "5 influencer partnerships (500K reach)", "45% initial sales via social"], image: "/placeholder.svg?height=400&width=600" },
+    { title: "Getrude the osteopath - Social Media Revamp", category: 'strategy', description: "Developed and executed a comprehensive social media strategy transforming online presence via visual storytelling and targeted engagement.", metrics: ["+20% engagement", "+15% conversion", "-10% CPC", "+35% Instagram growth (6mo)"], image: "/placeholder.svg?height=400&width=600" },
+    { title: "Grocer Mbio - Digital Marketing Campaign", category: 'strategy', description: "Data-driven content + SEO plan enhancing brand visibility and customer engagement.", metrics: ["+15% brand awareness", "+20% organic traffic", "+30% email CTR", "+12% retention"], image: "/placeholder.svg?height=400&width=600" },
+    { title: "Fashion Brand Launch Campaign", category: 'content', description: "Launch strategy establishing digital presence from zero to traction.", metrics: ["10k+ followers first month", "25% engagement (avg 3%)", "5 influencer partnerships (500K reach)", "45% initial sales via social"], image: "/placeholder.svg?height=400&width=600" },
   ]
 
   // Testimonials
@@ -308,6 +308,22 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Availability & Tool Strip */}
+      <section className="py-6 border-b bg-background/70 backdrop-blur-sm">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm">
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/30">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> Available for new contracts
+            </div>
+            <div className="flex gap-3 flex-wrap items-center text-muted-foreground">
+              {['Meta Ads', 'TikTok', 'LinkedIn', 'Google Ads', 'Tableau', 'Canva', 'Asana'].map(t => (
+                <span key={t} className="px-2 py-1 rounded-md bg-primary/5 text-primary/80 dark:text-primary/70 border border-primary/10">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About */}
       <section id="about" className="py-20 section-alt">
         <div className="container mx-auto px-4">
@@ -326,18 +342,18 @@ const HomePage = () => {
                   <p className="mb-6">Recognized for translating brand goals into actionable roadmaps that increase visibility, lower acquisition costs and elevate retention.</p>
                   <div className="mb-4 mt-8">
                     <h4 className="text-lg font-bold mb-4 flex items-center"><span className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mr-2"><span className="text-xs font-bold text-primary">1</span></span>Education</h4>
-                    <ul className="space-y-2 ml-8 text-sm">
-                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>2021 — Bachelor of Information Science (IT Major), Kisii University</span></li>
+                    <ul className="space-y-2 ml-8">
+                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>Bachelor of Information Science (IT Major), Kisii University, 2021</span></li>
                     </ul>
                   </div>
                   <div className="mb-4 mt-8">
                     <h4 className="text-lg font-bold mb-4 flex items-center"><span className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mr-2"><span className="text-xs font-bold text-primary">2</span></span>Certifications</h4>
-                    <ul className="space-y-2 ml-8 text-xs md:text-sm">
-                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>2023 — Meta (Facebook) Ads Certification</span></li>
-                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>2023 — Google Ads Certification</span></li>
-                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>2023 — Social Media Marketing – HubSpot Academy</span></li>
-                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>2022 — Internet and Social Media Safety</span></li>
-                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>2022 — Mastering Advertising in the Social Media Age</span></li>
+                    <ul className="space-y-2 ml-8 text-sm">
+                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>Social Media Marketing – HubSpot Academy (2023)</span></li>
+                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>Google Ads Certification (2023)</span></li>
+                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>Meta (Facebook) Ads Certification (2023)</span></li>
+                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>Mastering Advertising in the Social Media Age (2022)</span></li>
+                      <li className="flex items-start"><span className="text-primary mr-2">•</span><span>Internet & Social Media Safety (2022)</span></li>
                     </ul>
                   </div>
                   <div className="mt-6 flex flex-wrap gap-3 text-[10px] font-medium tracking-wide">
@@ -526,6 +542,32 @@ const HomePage = () => {
                     <CardContent className="p-6"><h3 className="text-xl font-bold mb-3">{study.title}</h3><p className="mb-4 text-muted-foreground text-sm leading-relaxed">{study.description}</p><h4 className="font-semibold mb-2">Key Results:</h4><ul className="space-y-1 mb-2 text-sm">{study.metrics.map(m => <li key={m} className="flex items-start"><span className="text-primary mr-2">•</span><span>{m}</span></li>)}</ul></CardContent>
                   </Card>
                 ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="strategy" className="mt-0">
+              <div className="grid md:grid-cols-2 gap-12">
+                {caseStudies.filter(s => s.category === 'strategy').map(study => (
+                  <Card key={study.title} className="overflow-hidden border-none shadow-lg bg-background/80 backdrop-blur-sm hover:shadow-xl transition-all">
+                    <div className="relative h-64 w-full"><NextImage src={study.image} alt={study.title} fill className="object-cover" /></div>
+                    <CardContent className="p-6"><h3 className="text-xl font-bold mb-3">{study.title}</h3><p className="mb-4 text-muted-foreground text-sm leading-relaxed">{study.description}</p><h4 className="font-semibold mb-2">Key Results:</h4><ul className="space-y-1 mb-2 text-sm">{study.metrics.map(m => <li key={m} className="flex items-start"><span className="text-primary mr-2">•</span><span>{m}</span></li>)}</ul></CardContent>
+                  </Card>
+                ))}
+                {caseStudies.filter(s => s.category === 'strategy').length === 0 && (
+                  <div className="col-span-full text-center text-sm text-muted-foreground py-10">No strategy case studies yet.</div>
+                )}
+              </div>
+            </TabsContent>
+            <TabsContent value="content" className="mt-0">
+              <div className="grid md:grid-cols-2 gap-12">
+                {caseStudies.filter(s => s.category === 'content').map(study => (
+                  <Card key={study.title} className="overflow-hidden border-none shadow-lg bg-background/80 backdrop-blur-sm hover:shadow-xl transition-all">
+                    <div className="relative h-64 w-full"><NextImage src={study.image} alt={study.title} fill className="object-cover" /></div>
+                    <CardContent className="p-6"><h3 className="text-xl font-bold mb-3">{study.title}</h3><p className="mb-4 text-muted-foreground text-sm leading-relaxed">{study.description}</p><h4 className="font-semibold mb-2">Key Results:</h4><ul className="space-y-1 mb-2 text-sm">{study.metrics.map(m => <li key={m} className="flex items-start"><span className="text-primary mr-2">•</span><span>{m}</span></li>)}</ul></CardContent>
+                  </Card>
+                ))}
+                {caseStudies.filter(s => s.category === 'content').length === 0 && (
+                  <div className="col-span-full text-center text-sm text-muted-foreground py-10">No content case studies yet.</div>
+                )}
               </div>
             </TabsContent>
           </Tabs>
