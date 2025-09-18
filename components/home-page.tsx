@@ -572,7 +572,6 @@ const HomePage = () => {
                   </div>
                   <div className="mt-8 flex flex-wrap gap-4 text-sm">
                     <Link href="#pricing" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-white hover:bg-primary/90">View Packages</Link>
-                    <Link href="/cv.pdf" className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-primary/30 hover:border-primary">Download CV</Link>
                   </div>
                 </div>
               </div>
